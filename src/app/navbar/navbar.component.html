@@ -1,0 +1,23 @@
+<div class="flex">
+  <div class=" flex w-full flex-row h-20 items-center bg-gray-700 gap-10 ">
+    <ng-container *ngIf="authService.signedin$ | async; else signout" >
+      <a class="item" routerLink="/inbox" routerLinkActive="active" class="m-5 font-bold text-xl focus:border-b-2 focus:border-white text-white"> Inbox </a>
+      <a class="item" routerLink="/signout" routerLinkActive="active" class="m-5 font-bold text-xl focus:border-b-2 focus:border-white text-white">
+        Sign out
+      </a>
+    </ng-container>
+    <ng-template #signout class="">
+      <a
+        class="m-5 font-bold text-xl focus:border-b-2 focus:border-white text-white"
+        routerLink="/"
+        [routerLinkActiveOptions]="{ exact: true }"
+        routerLinkActive="active"
+      >
+        Sign In
+      </a>
+      <a class="m-5 font-bold text-xl focus:border-b-2 focus:border-white text-white" routerLink="signup" routerLinkActive="active">
+        Sign Up
+      </a>
+    </ng-template>
+  </div>
+</div>
