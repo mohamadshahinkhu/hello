@@ -11,12 +11,20 @@ export interface SignupCredentials {
 export interface SignupResponse {
   username: string;
 }
+export interface loginCredentials {
+  username?: string | null;
+  password?: string | null;
+}
+export interface LoginResponse {
+  username: string;
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private baseUrl = 'https://api.angular-email.com';
-  public signedin$ = new BehaviorSubject(false);
+  public signedin$ = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient) {}
 
   usernameAvailable(username: string) {
@@ -49,5 +57,14 @@ export class AuthService {
         this.signedin$.next(false);
       })
     );
+  }
+  signin(loginCredentials: loginCredentials) {
+    return this.http
+      .post<LoginResponse>(`${this.baseUrl}/auth/signin/`, loginCredentials)
+      .pipe(
+        tap(() => {
+          this.signedin$.next(true);
+        })
+      );
   }
 }

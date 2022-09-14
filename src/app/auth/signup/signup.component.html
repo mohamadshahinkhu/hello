@@ -1,32 +1,37 @@
 <form
-  class="flex flex-col w-full  justify-center"
+  class="flex flex-col w-full justify-center"
   [formGroup]="form"
   (ngSubmit)="onSubmit()"
-><div class="flex flex-col w-full justify-center h-full items-center">
-  <h3 class="m-5 text-2xl font-bold">Create an Account</h3>
-<div class="flex flex-col justify-center">
-  <p class="flex justify-center font-bold">username</p>
-  <app-input [control]="f.username" label="" placeholder="please enter your username" ></app-input>
-</div>
-<div class="flex flex-col justify-center">
-  <p class="flex justify-center font-bold">password</p>
-  <app-input
-    [control]="f.password"
-    label=""
-    type="password"
-    placeholder="please enter password"
-  ></app-input>
-</div>
-<div class="flex flex-col justify-center">
-  <p class="flex justify-center font-bold">passwordConfirmation</p>
-  <app-input
-    [control]="f.passwordConfirmation"
-    label=""
-    type="password"
-    placeholder="please enter password"
-  ></app-input>
-</div>
-</div>
+>
+  <div class="flex flex-col w-full justify-center h-full items-center">
+    <h3 class="m-5 text-2xl font-bold">Create an Account</h3>
+    <div class="flex flex-col justify-center">
+      <p class="flex justify-center font-bold">username</p>
+      <app-input
+        [control]="f.username"
+        label=""
+        placeholder="please enter your username"
+      ></app-input>
+    </div>
+    <div class="flex flex-col justify-center">
+      <p class="flex justify-center font-bold">password</p>
+      <app-input
+        [control]="f.password"
+        label=""
+        type="password"
+        placeholder="please enter password"
+      ></app-input>
+    </div>
+    <div class="flex flex-col justify-center">
+      <p class="flex justify-center font-bold">passwordConfirmation</p>
+      <app-input
+        [control]="f.passwordConfirmation"
+        label=""
+        type="password"
+        placeholder="please enter password"
+      ></app-input>
+    </div>
+  </div>
   <ng-container *ngIf="showErrorPasswordDontMatch()">
     <div
       class="w-40 h-10 bg-red-500"
@@ -50,13 +55,13 @@
       unknownError
     </div>
   </ng-container>
-<div class="flex justify-center">
-  <button
-    [disabled]="form.invalid"
-    class="bg-green-600 w-40 justify-center h-12 rounded-lg"
-    type="submit"
-  >
-    Create Account
-  </button>
-</div>
+  <div class="flex justify-center">
+    <button
+      [disabled]="form.invalid"
+      class="bg-green-600 w-40 justify-center h-12 rounded-lg"
+      type="submit"
+    >
+      Create Account
+    </button>
+  </div>
 </form>
