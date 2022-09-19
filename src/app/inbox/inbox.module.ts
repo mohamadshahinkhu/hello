@@ -3,23 +3,30 @@ import { CommonModule } from '@angular/common';
 
 import { InboxRoutingModule } from './inbox-routing.module';
 import { InboxhomeComponent } from './inboxhome/inboxhome.component';
-import { EmailcreateComponent } from './emailcreate/emailcreate.component';
-import { EmailindexComponent } from './emailindex/emailindex.component';
-import { EmailreplyComponent } from './emailreply/emailreply.component';
-import { EmailshowComponent } from './emailshow/emailshow.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { EmailIndexComponent } from './email-index/email-index.component';
+import { EmailCreateComponent } from './email-create/email-create.component';
+import { EmailReplyComponent } from './email-reply/email-reply.component';
+import { EmailShowComponent } from './email-show/email-show.component';
+import { PlaceholderComponent } from './placeholder/placeholder.component';
 
 @NgModule({
   declarations: [
     InboxhomeComponent,
-    EmailcreateComponent,
-    EmailindexComponent,
-    EmailreplyComponent,
-    EmailshowComponent
+    EmailIndexComponent,
+    EmailCreateComponent,
+    EmailReplyComponent,
+    EmailShowComponent,
+    PlaceholderComponent,
   ],
   imports: [
     CommonModule,
-    InboxRoutingModule
-  ]
+    InboxRoutingModule,
+    HttpClientModule,
+    SharedModule,
+    ReactiveFormsModule,
+  ],
 })
-export class InboxModule { }
+export class InboxModule {}
