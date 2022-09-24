@@ -1,8 +1,17 @@
-<div>
-  <ul>
-    <li>list1</li>
-    <li>list2</li>
-    <li>list3</li>
-    <li>list4</li>
-  </ul>
+<div
+  *ngFor="let item of emails"
+  class="w-48 text-sm m-2 font-medium text-gray-900 bg-white rounded-lg border border-gray-200 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+>
+  <a
+    [routerLink]="item.id"
+    routerLinkActive="active"
+    href=""
+    aria-current="true"
+    class="block py-2 px-4 w-full text-black focus:bg-blue-700 focus:text-white bg-blue-300 rounded-lg border-b border-gray-200 cursor-pointer dark:bg-gray-800 dark:border-gray-600"
+  >
+    {{ item.subject }}
+    <div>
+      {{ item.from }}
+    </div>
+  </a>
 </div>
