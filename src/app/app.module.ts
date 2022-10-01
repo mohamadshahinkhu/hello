@@ -1,3 +1,4 @@
+
 import { AuthHttpInterceptor } from '../app/_interceptors/authhttp.interceptor';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,8 +10,9 @@ import { SharedModule } from './shared/shared.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
+
 @NgModule({
-  declarations: [AppComponent, NavbarComponent],
+  declarations: [AppComponent, NavbarComponent,],
   imports: [BrowserModule, AuthModule, AppRoutingModule, SharedModule],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },

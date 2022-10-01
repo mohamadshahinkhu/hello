@@ -52,7 +52,7 @@ export class EmailIndexComponent implements OnInit {
   ];
 
   constructor(private emailservice: EmailService) {}
-  getemails(id: any) {
+  getemails(id: number) {
     const emails = this.emails.find((e: any) => e.id == id);
     return of(emails);
   }

@@ -1,1 +1,11 @@
-<p>email-create works!</p>
+<button
+  (click)="showmodal = true"
+  class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-xl text-sm px-8 py-4 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+>
+  compose
+</button>
+<app-modal [showbtn]="false" (dismis)="showmodal = false" *ngIf="showmodal">
+  <p>create a email</p>
+  <app-email-form [email]="email"></app-email-form>
+</app-modal>
+

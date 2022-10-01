@@ -1,3 +1,4 @@
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -11,6 +12,9 @@ import { EmailCreateComponent } from './email-create/email-create.component';
 import { EmailReplyComponent } from './email-reply/email-reply.component';
 import { EmailShowComponent } from './email-show/email-show.component';
 import { PlaceholderComponent } from './placeholder/placeholder.component';
+import { EmailFormComponent } from './email-form/email-form.component';
+import { ModalComponent } from '../shared/modal/modal.component';
+
 
 @NgModule({
   declarations: [
@@ -20,6 +24,7 @@ import { PlaceholderComponent } from './placeholder/placeholder.component';
     EmailReplyComponent,
     EmailShowComponent,
     PlaceholderComponent,
+    EmailFormComponent,
   ],
   imports: [
     CommonModule,
@@ -28,5 +33,8 @@ import { PlaceholderComponent } from './placeholder/placeholder.component';
     SharedModule,
     ReactiveFormsModule,
   ],
+  exports :[
+    EmailFormComponent
+  ]
 })
 export class InboxModule {}

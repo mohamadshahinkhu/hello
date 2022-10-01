@@ -8,7 +8,7 @@ import { EmailService } from '../../_services/email.service';
   styleUrls: ['./email-show.component.css'],
 })
 export class EmailShowComponent implements OnInit {
-  email: any;
+  emails: any;
   constructor(
     private route: ActivatedRoute,
     private EmailService: EmailService
@@ -16,8 +16,8 @@ export class EmailShowComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(({ id }) =>
-      this.EmailService.getemails(id).subscribe((email) => {
-        this.email = email;
+      this.EmailService.getemails(id).subscribe((emails) => {
+        this.emails = emails;
       })
     );
   }

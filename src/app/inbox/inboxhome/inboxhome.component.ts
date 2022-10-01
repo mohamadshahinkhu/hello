@@ -10,7 +10,7 @@ export class InboxhomeComponent implements OnInit {
   constructor(private emailService: EmailService) {}
 
   ngOnInit(): void {
-    this.emailService.getemails(1).subscribe((data) => {
+    this.emailService.getemails(Number).subscribe((data) => {
       console.log(data);
     });}
 }
