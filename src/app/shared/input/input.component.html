@@ -36,5 +36,11 @@
     >
       unknown error
     </div>
+    <div
+      class="w-40 items-center h-16 bg-red-500"
+      *ngIf="control.hasError('email')"
+    >
+      please enter valid email
+    </div>
   </ng-container>
 </div>

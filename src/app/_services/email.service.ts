@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 export interface EmailDetail {
   id: number;
-  from: string;
+  from: '';
   to: string;
   subject: string;
   html: string;
@@ -22,6 +22,8 @@ export class EmailService {
   getemails(id:any) {
     // return this.http.get<any>('${this.rootUrl}/emails/${id}');
     return of(this.emails);
-
+  }
+  sendemail(email:EmailDetail){
+return this.emails.http.post('${this.rootUrl}/emails',email)
   }
 }

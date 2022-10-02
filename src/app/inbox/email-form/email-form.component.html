@@ -1,4 +1,4 @@
-<form action="" [formGroup]="form">
+<form action="" [formGroup]="form" (ngSubmit)="onsubmit()">
   <app-input label="to" [control]="form.get('to')" type="email"></app-input>
   <app-input label="from" [control]="form.get('from')" type="email"></app-input>
   <app-input label="subject" [control]="form.get('subject')"></app-input>
@@ -7,5 +7,5 @@
     [control]="form.get('text')"
     type="text"
   ></app-input>
-  <button class="w-40 h-12 bg-blue-400 rounded-lg" type="submit" >send email</button>
+  <button [disabled]="form.invalid" class="w-40 h-12 bg-blue-400 rounded-lg" type="submit" >send email</button>
 </form>

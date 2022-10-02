@@ -1,4 +1,11 @@
-<h1>email show</h1>
-<p *ngIf="emails">
-  {{emails.subject}}
-</p>
+<div class="flex flex-row gap-10">
+  <div class="flex">
+    <h1>email show</h1>
+    <p *ngIf="emails">
+      {{ emails.subject }}
+    </p>
+  </div>
+  <div class="flex relative left-52">
+    <app-email-reply [email]="emails"></app-email-reply>
+  </div>
+</div>

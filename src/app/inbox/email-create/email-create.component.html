@@ -6,6 +6,6 @@
 </button>
 <app-modal [showbtn]="false" (dismis)="showmodal = false" *ngIf="showmodal">
   <p>create a email</p>
-  <app-email-form [email]="email"></app-email-form>
+  <app-email-form (submitemail)="onsubmitform($event)" [email]="email"></app-email-form>
 </app-modal>
 
